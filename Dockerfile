@@ -12,7 +12,7 @@ FROM ghcr.io/orvice/go-runtime:master
 
 COPY --from=builder /app/epusdt /app/epusdt
 COPY --from=builder /app/static /app/static
-
+WORKDIR /app
 ENTRYPOINT [ "/app/epusdt" ]
 
 CMD [ "http","start" ]
