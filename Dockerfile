@@ -11,6 +11,7 @@ RUN tar -xzf epusdt_v0.0.2_Linux_x86_64.tar.gz
 FROM ghcr.io/orvice/go-runtime:master
 
 COPY --from=builder /app/epusdt /app/epusdt
+COPY --from=builder /app/static /app/static
 
 ENTRYPOINT [ "/app/epusdt" ]
 
